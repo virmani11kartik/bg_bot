@@ -1413,12 +1413,6 @@ If you're adapting this for different motors:
 
 ---
 
-## License
-
-MIT License - Feel free to use and modify for your projects.
-
----
-
 ## Acknowledgments
 
 - Built using [python-can](https://python-can.readthedocs.io/)
@@ -1454,7 +1448,6 @@ Still stuck? Open an issue with:
 
 ## License
 
-This guide is provided as-is for educational and practical purposes.
 
 ## Contributing
 
