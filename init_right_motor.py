@@ -184,7 +184,7 @@ send_sdo(bytes([0x2B, 0x65, 0x20, 0x2B, 0x0A, 0x00, 0x00, 0x00]))
 send_sdo(bytes([0x42, 0x41, 0x60, 0x00, 0x00, 0x00, 0x00, 0x00]))
 time.sleep(0.2)
 
-# *** THIS IS THE CRITICAL PART THAT WAS MISSING ***
+# *** THIS IS THE CRITICAL PART ***
 print("[11/11] State machine via RPDO (MOTOR ENGAGE)...")
 send_cmd(0x0080, 0)  # Fault reset
 for _ in range(5):
@@ -195,7 +195,6 @@ for _ in range(10):
     send_cmd(0x000F, 0)  # Enable operation
 
 print("\n✓ RIGHT MOTOR INITIALIZED AND ENGAGED!")
-print("  You should have heard a click sound")
 print("  Run the RPDO speed test script now")
 
 bus.shutdown()
