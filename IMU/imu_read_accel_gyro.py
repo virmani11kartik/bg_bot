@@ -76,9 +76,9 @@ while True:
     
     if gyr_x is not None:
         output_parts.append(f"GYR: X:{gyr_x:6.3f} Y:{gyr_y:6.3f} Z:{gyr_z:6.3f} rad/s")
-        store_imu['gyro_x'] = acc_x
-        store_imu['gyro_y'] = acc_y
-        store_imu['gyro_z'] = acc_z
+        store_imu['gyro_x'] = gyr_x
+        store_imu['gyro_y'] = gyr_y
+        store_imu['gyro_z'] = gyr_z
     
     if output_parts:
         print(" | ".join(output_parts))
