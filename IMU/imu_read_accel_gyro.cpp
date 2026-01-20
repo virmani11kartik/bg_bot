@@ -1,15 +1,3 @@
-// xsens_stream.cpp
-// Linux C++ example that mimics your Python script:
-// - Opens a serial port
-// - Sends Xbus-like packets (FA FF MID LEN ... CHECKSUM)
-// - Configures Acceleration (0x4020) and Rate of Turn (0x8020) at 100 Hz
-// - Reads MTData2 (MID 0x36) and parses the TLV-style payload blocks
-//
-// Build: g++ -O2 -std=c++17 xsens_stream.cpp -o xsens_stream
-// Run:   ./xsens_stream
-//
-// NOTE: This is a minimal example; production code should be more defensive.
-
 #include <cerrno>
 #include <cstdint>
 #include <cstring>
