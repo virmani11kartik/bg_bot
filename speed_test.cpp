@@ -1,6 +1,6 @@
-// canopen_velocity_ramp.cpp
+// speed_test.cpp
 //
-// C++ version of your Python script using Linux SocketCAN.
+// C++ version of speed_test.py
 // - Sends NMT (pre-op, start)
 // - Talks to one node via SDO reads/writes
 // - Sets CiA402 Profile Velocity mode (6060=3)
@@ -8,14 +8,7 @@
 // - Ramps 60FF to a target, holds while reading 606C, then ramps down and disables
 //
 // Build:
-//   g++ -O2 -std=c++17 canopen_velocity_ramp.cpp -o canopen_velocity_ramp
-//
-// Run (needs permission to use can0):
-//   sudo ./canopen_velocity_ramp
-//
-// Note: Assumes can0 already up and bitrate set, e.g.
-//   sudo ip link set can0 up type can bitrate 1000000
-//   (adjust bitrate)
+//   g++ -O2 -std=c++17 speed_test.cpp -o speed_test
 
 #include <linux/can.h>
 #include <linux/can/raw.h>
@@ -284,7 +277,7 @@ private:
   int node_;
 };
 
-// Optional: simple SDO ping to 6061:00, for node autodetect
+// simple SDO ping to 6061:00, for node autodetect
 static bool sdo_ping(CanSocket& bus, int node, double timeout_sec = 0.2) {
   uint8_t d[8] = {0};
   d[0] = 0x40; // read
